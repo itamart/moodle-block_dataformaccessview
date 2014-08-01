@@ -21,7 +21,7 @@
  */
 
 defined('MOODLE_INTERNAL') or die;
- 
+
 /**
  *
  */
@@ -29,37 +29,37 @@ class block_dataformaccessview extends block_base {
 
     public $dataformid;
 
-    static function get_extra_capabilities() {
+    static public function get_extra_capabilities() {
         $capabilities = array();
-        // View
+        // View.
         $capabilities[] = 'mod/dataform:viewaccess';
         $capabilities[] = 'mod/dataform:viewaccesshidden';
         $capabilities[] = 'mod/dataform:viewaccessearly';
         $capabilities[] = 'mod/dataform:viewaccesslate';
         $capabilities[] = 'mod/dataform:viewfilteroverride';
-        
-        // Own Entry
+
+        // Own Entry.
         $capabilities[] = 'mod/dataform:entryownview';
         $capabilities[] = 'mod/dataform:entryownexport';
         $capabilities[] = 'mod/dataform:entryownadd';
         $capabilities[] = 'mod/dataform:entryownupdate';
         $capabilities[] = 'mod/dataform:entryowndelete';
-        
-        // Group entry
+
+        // Group entry.
         $capabilities[] = 'mod/dataform:entrygroupview';
         $capabilities[] = 'mod/dataform:entrygroupexport';
         $capabilities[] = 'mod/dataform:entrygroupadd';
         $capabilities[] = 'mod/dataform:entrygroupupdate';
         $capabilities[] = 'mod/dataform:entrygroupdelete';
-        
-        // Any entry
+
+        // Any entry.
         $capabilities[] = 'mod/dataform:entryanyview';
         $capabilities[] = 'mod/dataform:entryanyexport';
         $capabilities[] = 'mod/dataform:entryanyadd';
         $capabilities[] = 'mod/dataform:entryanyupdate';
         $capabilities[] = 'mod/dataform:entryanydelete';
-        
-        // Anonymous entry
+
+        // Anonymous entry.
         $capabilities[] = 'mod/dataform:entryanonymousview';
         $capabilities[] = 'mod/dataform:entryanonymousexport';
         $capabilities[] = 'mod/dataform:entryanonymousadd';
@@ -70,26 +70,26 @@ class block_dataformaccessview extends block_base {
     }
 
     /**
-     * Set the applicable formats for this block
+     * Set the applicable formats for this block.
      * @return array
      */
-    function applicable_formats() {
+    public function applicable_formats() {
         return array('mod-dataform-access-index' => true);
     }
 
     /**
      *
      */
-    function init() {
-        $this->title = get_string('pluginname','block_dataformaccessview');
+    public function init() {
+        $this->title = get_string('pluginname', 'block_dataformaccessview');
     }
 
     /**
      *
      */
-    function specialization() {
+    public function specialization() {
         global $DB;
-        
+
         if (!empty($this->config->name)) {
             $this->title = $this->config->name;
         }
@@ -100,14 +100,14 @@ class block_dataformaccessview extends block_base {
     /**
      *
      */
-    function instance_allow_multiple() {
+    public function instance_allow_multiple() {
         return true;
     }
 
     /**
      *
      */
-    function get_content() {
+    public function get_content() {
         return null;
     }
 
@@ -119,5 +119,5 @@ class block_dataformaccessview extends block_base {
      */
     public function is_applicable(array $data) {
         return true;
-    }    
+    }
 }

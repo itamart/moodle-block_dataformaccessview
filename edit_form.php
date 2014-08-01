@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -27,24 +26,18 @@ class block_dataformaccessview_edit_form extends block_edit_form {
         $ruleformhelper = '\mod_dataform\pluginbase\dataformruleform_helper';
         $ruleformhelper::general_definition($mform, $this->block->dataformid, 'config_');
     }
-    
+
     /**
      *
      */
-    function validation($data, $files) {
+    public function validation($data, $files) {
         if ($errors = parent::validation($data, $files)) {
             return $errors;
         }
-            
-        $ruleformhelper = '\mod_dataform\pluginbase\dataformruleform_helper';
-        if ($errors = $ruleformhelper::general_validation($data, $files, 'config_')) {
-            return $errors;
-        }
-            
-        $errors= array();
 
-        
+        $ruleformhelper = '\mod_dataform\pluginbase\dataformruleform_helper';
+        $errors = $ruleformhelper::general_validation($data, $files, 'config_');
+
         return $errors;
     }
-    
 }

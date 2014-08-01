@@ -24,9 +24,9 @@ defined('MOODLE_INTERNAL') or die;
 
 $capabilities = array(
 
-    // BLOCK
+    // BLOCK.
     'block/dataformaccessview:addinstance' => array(
-    
+
         'riskbitmask' => RISK_SPAM | RISK_XSS,
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
