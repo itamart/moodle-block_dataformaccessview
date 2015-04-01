@@ -23,7 +23,7 @@
 class block_dataformaccessview_edit_form extends block_edit_form {
 
     protected function specific_definition($mform) {
-        $ruleformhelper = '\mod_dataform\pluginbase\dataformruleform_helper';
+        $ruleformhelper = '\mod_dataform\helper\ruleform';
         $ruleformhelper::general_definition($mform, $this->block->dataformid, 'config_');
     }
 
@@ -35,7 +35,7 @@ class block_dataformaccessview_edit_form extends block_edit_form {
             return $errors;
         }
 
-        $ruleformhelper = '\mod_dataform\pluginbase\dataformruleform_helper';
+        $ruleformhelper = '\mod_dataform\helper\ruleform';
         $errors = $ruleformhelper::general_validation($data, $files, 'config_');
 
         return $errors;
