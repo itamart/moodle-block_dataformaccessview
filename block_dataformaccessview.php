@@ -38,6 +38,9 @@ class block_dataformaccessview extends block_base {
         $capabilities[] = 'mod/dataform:viewaccesslate';
         $capabilities[] = 'mod/dataform:viewfilteroverride';
 
+        // Entries.
+        $capabilities[] = 'mod/dataform:manageentries';
+
         // Own Entry.
         $capabilities[] = 'mod/dataform:entryownview';
         $capabilities[] = 'mod/dataform:entryownexport';
