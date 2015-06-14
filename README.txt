@@ -5,8 +5,8 @@ The view access rules allow for granular control of view access.
 
 Release:
 ------------
-2.8.0
+2.9.0
 
 Documentation:
 --------------
-http://docs.moodle.org/28/en/Dataform_view_access_block
+http://docs.moodle.org/29/en/Dataform_view_access_block
