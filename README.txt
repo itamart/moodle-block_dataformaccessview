@@ -5,7 +5,7 @@ The view access rules allow for granular control of view access.
 
 Release:
 ------------
-2.8.6
+2.8.12
 
 Documentation:
 --------------
